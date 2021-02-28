@@ -1,33 +1,25 @@
 Your Project Title
-One Paragraph of project description goes here
+
+The Origins Skateboard Co. - Online Skate Shop
 
 Description
-A description of your project. Explain what is the project about and what is the use for it.
+
+A platform for buying skateboarding products online
 
 Technical Used
-What technologies you used that helped you build this project.
 
-Example:
+React, react-bootstrap, axios
 
-- React
-- Bootstrap with react
-- Ajax (axios) for API
-- etc..
+
 Wireframes
 Your step by step planning sketch of your project, that you can post them as an image in here.
 
 User Stories
-A story of the project user, that explains the use of the project.
 
-Example:
+The user will be able to select products and purchase them.
+The user will be able to see the current riders for the team.
+....
 
-User must be able to:
-
-- View Example
-- Blablabla
-- Search Example
-- Fine Example
-- etc..
 
 Planning and Development Process
 A basic story of your planning and developing this project.
@@ -39,7 +31,10 @@ Unsolved problems
 List unsolved problems which would be fixed in future iterations.
 
 APIs Used
-List your APIs you have used in this project and explain why did you use it.
+
+Pixabay API - shopping images
+GoogleMaps API - store locator map
+Firebase - storage of rider info and shopping items' details
 
 Acknowledgments
 References
