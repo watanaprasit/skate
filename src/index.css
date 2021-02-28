@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Oi';
+  src: local('Oi'), url(./Fonts/Oi-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'SquadaOne';
+  src: local('SquadaOne'), url(./Fonts/SquadaOne-Regular.ttf) format('truetype');
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +20,77 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.carousel-text {
+  font-family: SquadaOne;
+  color: #000000;
+}
+
+.center-navbar {
+  width:30%;
+  margin: auto;
+  font-family: SquadaOne;
+}
+
+.center-navbar-links {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header {
+  background-color: black;
+  color:whitesmoke;
+  font-family: SquadaOne;
+}
+
+.nav-container {
+  color:black;
+  background-color:whitesmoke;
+}
+
+.logo {
+  width:20%;
+  height:20%;
+}
+
+.logo-text {
+  color: black;
+
+}
+
+.middle-container {
+  padding : 5%;
+
+}
+
+.middle-container-items {
+  width:50%;
+  height:50%;
+  margin: auto;
+}
+
+.middle-container-items-title {
+  font-family : SquadaOne;
+}
+
+.shop-items {
+  font-family : SquadaOne;
+  font-size: 30%;
+
+}
+
+.footer-link {
+  color: white;
+}
+
+.aboutus-text {
+  font-family: SquadaOne;
+}
+
+.plus-minus-rider {
+  display: flex;
+  justify-content: space-around;
+
 }
