@@ -3,6 +3,7 @@ import {Nav, Navbar, NavDropdown, Button, Row, Col} from 'react-bootstrap';
 import '../../index.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import {NavLink} from 'react-router-dom';
 
 
 
@@ -33,9 +34,9 @@ function NavigationBar({cart}) {
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className='center-navbar-links'>
-                                <Nav.Link href="/shop/skateboard">Decks</Nav.Link>
-                                <Nav.Link href="/shop/skateboard-wheels">Wheels</Nav.Link>
-                                <Nav.Link href="/shop/skaters">Trucks</Nav.Link>
+                                <NavLink to="/shop/skateboard">Decks</NavLink>
+                                <NavLink to="/shop/skateboard-wheels">Wheels</NavLink>
+                                <NavLink to="/shop/skaters">Trucks</NavLink>
                                 <NavDropdown title="Others" id="basic-nav-dropdown">
                                     <NavDropdown.Item href="/shop/others/flatrails">FlatRails</NavDropdown.Item>
                                     <NavDropdown.Item href="/shop/others/wax">Wax</NavDropdown.Item>
@@ -46,12 +47,12 @@ function NavigationBar({cart}) {
                 </Col>
 
                 <Col md={'2'}>
-                    <Nav.Link
-                        href="/shopping-cart"
+                    <NavLink
+                        to="/shopping-cart"
                         className="float right">
                         <FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon>
                         <div>{cart.length}</div>
-                    </Nav.Link>
+                    </NavLink>
 
                 </Col>
             </Row>

@@ -45,9 +45,8 @@ function App() {
 
   return (
     <div className="App">
-        <NavigationBar cart={cart} />
-
         <Router>
+            <NavigationBar cart={cart} />
             <Switch>
                 <Route path ={'/country-language'}>
                     <CountryLanguage />
@@ -65,7 +64,7 @@ function App() {
                     <Shop deckInfo={deckInfo} wheelsInfo={wheelsInfo} trucksInfo={trucksInfo} setCart={setCart}/>
                 </Route>
                 <Route path={'/shopping-cart'}>
-                    <ShoppingCart cart={cart} show={show} setShow={setShow}/>
+                    <ShoppingCart cart={cart} setCart={setCart} show={show} setShow={setShow}/>
                 </Route>
                 <Route path={'/about-us'}>
                     <AboutUs/>
