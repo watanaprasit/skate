@@ -1,6 +1,6 @@
 import React, {useRef, useState} from 'react';
 import {Card, Form, Button, Alert} from 'react-bootstrap';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import {useAuth} from "../../../../contexts/AuthContext";
 
 function SignIn(props) {
@@ -9,6 +9,7 @@ function SignIn(props) {
     const { signIn } = useAuth()
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
+    const history = useHistory()
 
 
     async function handleSubmit(e) {
