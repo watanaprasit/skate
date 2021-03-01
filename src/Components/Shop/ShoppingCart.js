@@ -61,7 +61,7 @@ function ShoppingCart({cart,setCart, show, setShow}) {
                 <ButtonGroup size="lg" className="mb-2">
                     <Button onClick={handleShow}>Checkout</Button>
                 </ButtonGroup>
-                <Modal show={show} onHide={handleClose} animation={false}>
+                <Modal className='shop-items' show={show} onHide={handleClose} animation={false}>
                     <Modal.Header closeButton>
                         <Modal.Title>Your Origins Total</Modal.Title>
                     </Modal.Header>

@@ -19,7 +19,7 @@ function NavigationBar({cart}) {
                     <Nav.Link className='footer-link' href="/">The Origins Skateboard</Nav.Link>
                 </Col>
                 <Col md={'4'}>
-                    <Nav.Link className='footer-link' href="/account">SIGN IN</Nav.Link>
+                    <Nav.Link className='footer-link' href="/signin">SIGN IN</Nav.Link>
                 </Col>
             </Row>
             <Row>

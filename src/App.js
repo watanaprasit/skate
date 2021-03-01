@@ -8,11 +8,14 @@ import Middle from "./Components/Middle/Middle";
 import FooterBar from "./Components/Navigation/FooterBar";
 import Rider from "./Components/Riders/Rider";
 import Riders from "./Components/Riders/Riders";
-import Account from "./Components/Navigation/Header/Account";
 import AboutUs from "./Components/Navigation/Footer/AboutUs";
 import ContactUs from "./Components/Navigation/Footer/ContactUs";
 import StoreLocator from "./Components/Navigation/Footer/StoreLocator";
 import CountryLanguage from "./Components/Navigation/Header/CountryLanguage";
+
+import {AuthProvider} from "./contexts/AuthContext";
+import SignUp from "./Components/Navigation/Header/Account/SignUp";
+import SignIn from "./Components/Navigation/Header/Account/SignIn";
 
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import React , {useState, useEffect} from 'react';
@@ -46,42 +49,48 @@ function App() {
   return (
     <div className="App">
         <Router>
-            <NavigationBar cart={cart} />
-            <Switch>
-                <Route path ={'/country-language'}>
-                    <CountryLanguage />
-                </Route>
-                <Route path={'/account'}>
-                    <Account />
-                </Route>
-                <Route exact path={'/'}>
-                    <CarouselPictures picture={picture} setPicture={setPicture}/>
-                    <Carousel2 picture={picture}/>
-                    <Middle />
-                    {/*<Riders />*/}
-                </Route>
-                <Route exact path={'/shop/:item'}>
-                    <Shop deckInfo={deckInfo} wheelsInfo={wheelsInfo} trucksInfo={trucksInfo} setCart={setCart}/>
-                </Route>
-                <Route path={'/shopping-cart'}>
-                    <ShoppingCart cart={cart} setCart={setCart} show={show} setShow={setShow}/>
-                </Route>
-                <Route path={'/about-us'}>
-                    <AboutUs/>
-                </Route>
-                <Route path={'/riders'}>
-                    <Rider rider={rider} show={show} setShow={setShow}/>
-                </Route>
-                <Route path={'/store-locator'}>
-                    <StoreLocator />
-                </Route>
-                <Route>
-                    <ContactUs />
-                </Route>
-                <Route exact path={'/*'}>
-                    WHAT THE FUCK ARE YOU DOING!
-                </Route>
-            </Switch>
+            <AuthProvider>
+                <NavigationBar cart={cart} />
+                <Switch>
+                    <Route path ={'/country-language'}>
+                        <CountryLanguage />
+                    </Route>
+                    <Route path={'/signup'}>
+                        <SignUp />
+                    </Route>
+                    <Route path={'/signin'}>
+                        <SignIn />
+                    </Route>
+                    <Route exact path={'/'}>
+                        <CarouselPictures picture={picture} setPicture={setPicture}/>
+                        <Carousel2 picture={picture}/>
+                        <Middle />
+                        {/*<Riders />*/}
+                    </Route>
+                    <Route exact path={'/shop/:item'}>
+                        <Shop deckInfo={deckInfo} wheelsInfo={wheelsInfo} trucksInfo={trucksInfo} setCart={setCart}/>
+                    </Route>
+                    <Route path={'/shopping-cart'}>
+                        <ShoppingCart cart={cart} setCart={setCart} show={show} setShow={setShow}/>
+                    </Route>
+                    <Route path={'/about-us'}>
+                        <AboutUs/>
+                    </Route>
+                    <Route path={'/riders'}>
+                        <Rider rider={rider} show={show} setShow={setShow}/>
+                    </Route>
+                    <Route path={'/store-locator'}>
+                        <StoreLocator />
+                    </Route>
+                    <Route path={'/contact-us'}>
+                        <ContactUs />
+                    </Route>
+                    <Route exact path={'/*'}>
+                        WHAT THE FUCK ARE YOU DOING!
+                    </Route>
+                </Switch>
+            </AuthProvider>
+
         </Router>
         <FooterBar />
     </div>
