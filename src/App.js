@@ -16,17 +16,15 @@ import CountryLanguage from "./Components/Navigation/Header/CountryLanguage";
 import {AuthProvider} from "./contexts/AuthContext";
 import SignUp from "./Components/Navigation/Header/Account/SignUp";
 import SignIn from "./Components/Navigation/Header/Account/SignIn";
+import Dashboard from "./Components/Navigation/Header/Account/Dashboard";
 
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import React , {useState, useEffect} from 'react';
 
 import {getItemInfo, getRiders} from "./library/library";
 
-import CarouselPictures from "./Components/Carousel/CarouselPictures";
-
 function App() {
     const [rider, setRiders] = useState([])
-    const [picture, setPicture] = useState([])
     const [deckInfo, setDeckInfo] = useState([])
     const [wheelsInfo, setWheelsInfo] = useState([])
     const [trucksInfo, setTrucksInfo] = useState([])
@@ -41,10 +39,6 @@ function App() {
         getItemInfo("wheels", setWheelsInfo)
 
     }, [])
-
-    // console.log(picture)
-    // console.log(itemInfo)
-    // console.log(cart)
 
   return (
     <div className="App">
@@ -61,9 +55,11 @@ function App() {
                     <Route path={'/signin'}>
                         <SignIn />
                     </Route>
+                    <Route path={'/dashboard'}>
+                        <Dashboard />
+                    </Route>
                     <Route exact path={'/'}>
-                        <CarouselPictures picture={picture} setPicture={setPicture}/>
-                        <Carousel2 picture={picture}/>
+                        <Carousel2 />
                         <Middle />
                         {/*<Riders />*/}
                     </Route>

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Carousel} from 'react-bootstrap';
 
-function Carousel2({picture}) {
+function Carousel2() {
 
     return (
             <div className='container-fluid' >
@@ -9,7 +9,6 @@ function Carousel2({picture}) {
                     <Carousel.Item style={{'height':"300px"}} >
                         <img style={{'height':"300px"}}
                              className="d-block w-100"
-                             // src={picture[0]}
                             src='https://firebasestorage.googleapis.com/v0/b/riders-5712c.appspot.com/o/carousel%2Fcarousel3.jpg?alt=media&token=bec805f2-8b16-40d4-bb4b-a41277ff26bc'                        />
                         <Carousel.Caption>
                             <h3 className='carousel-text'>Chair Gap Sardinia</h3>

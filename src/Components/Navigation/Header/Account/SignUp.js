@@ -25,7 +25,7 @@ function SignUp(props) {
             setLoading(true)
             await signUp(emailRef.current.value, passwordRef.current.value)
         } catch {
-            setError('Failed to creat an account')
+            setError('Failed to create an account')
         }
 
         setLoading(false)
@@ -36,7 +36,7 @@ function SignUp(props) {
             <Card>
                 <Card.Body>
                     <h2 className="text-center mb-4">Sign Up</h2>
-                    {currentUser}
+                    {currentUser && currentUser.email}
                     {error && <Alert variant="danger">{error}</Alert>}
                     <Form onSubmit={handleSubmit}>
                         <Form.Group id="email">
