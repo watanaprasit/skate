@@ -6,6 +6,7 @@ import '../../index.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
 
+
 function Shop({deckInfo, trucksInfo, wheelsInfo, setCart}) {
     const {item} = useParams();
     const [state, setState] = useState([]);
@@ -26,7 +27,7 @@ function Shop({deckInfo, trucksInfo, wheelsInfo, setCart}) {
 
     }, [])
 
-    function addToCart (el) {
+    function addToCart(el) {
         setCart(prevState => ([...prevState, el]))
     }
 
@@ -49,16 +50,16 @@ function Shop({deckInfo, trucksInfo, wheelsInfo, setCart}) {
                     switch (item) {
                         case 'skateboard':
                             return (
-                                deckInfo.map((el,index) => (
+                                deckInfo.map((el, index) => (
                                     <>
-                                        <Card.Body>
+                                        <Card.Body className="shop-items">
                                             <Card.Text key={index}>{el.description.toUpperCase()}</Card.Text>
                                             <Card.Subtitle>Price : ${el.price}</Card.Subtitle>
                                             <FontAwesomeIcon cursor='pointer'
                                                              onMouseOver={background}
                                                              onMouseOut={backgroundOut}
                                                              onClick={() => addToCart(el)}
-                                                             icon={faCartPlus} />
+                                                             icon={faCartPlus}/>
                                         </Card.Body>
                                     </>
 
@@ -66,34 +67,34 @@ function Shop({deckInfo, trucksInfo, wheelsInfo, setCart}) {
                             )
                         case 'skateboard-wheels':
                             return (
-                                wheelsInfo.map((el,index) => (
-                                    <Card.Body>
+                                wheelsInfo.map((el, index) => (
+                                    <Card.Body className="shop-items">
                                         <Card.Text key={index}>{el.description.toUpperCase()}</Card.Text>
                                         <Card.Subtitle>Price : ${el.price}</Card.Subtitle>
                                         <FontAwesomeIcon cursor='pointer'
                                                          onMouseOver={background}
                                                          onMouseOut={backgroundOut}
                                                          onClick={() => addToCart(el)}
-                                                         icon={faCartPlus} />
+                                                         icon={faCartPlus}/>
                                     </Card.Body>
                                 ))
                             )
                         case 'skaters':
                             return (
-                                trucksInfo.map((el,index) => (
-                                    <Card.Body>
+                                trucksInfo.map((el, index) => (
+                                    <Card.Body className="shop-items">
                                         <Card.Text key={index}>{el.description.toUpperCase()}</Card.Text>
                                         <Card.Subtitle>Price : ${el.price}</Card.Subtitle>
                                         <FontAwesomeIcon cursor='pointer'
                                                          onMouseOver={background}
                                                          onMouseOut={backgroundOut}
                                                          onClick={() => addToCart(el)}
-                                                         icon={faCartPlus} />
+                                                         icon={faCartPlus}/>
                                     </Card.Body>
                                 ))
                             )
                     }
-                }) ()}
+                })()}
 
             </Row>
         </>

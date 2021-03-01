@@ -77,7 +77,6 @@ code {
 
 .shop-items {
   font-family : SquadaOne;
-  font-size: 30%;
 
 }
 
@@ -94,3 +93,9 @@ code {
   justify-content: space-around;
 
 }
+
+.aboutus-img {
+  margin:auto;
+  font-family: SquadaOne;
+}
+

@@ -33,14 +33,14 @@ function NavigationBar({cart}) {
                     <Navbar className="center-navbar" bg="light" expand="sm">
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
-                            <Nav className='center-navbar-links'>
+                            <Nav>
                                 <NavLink to="/shop/skateboard">Decks</NavLink>
                                 <NavLink to="/shop/skateboard-wheels">Wheels</NavLink>
                                 <NavLink to="/shop/skaters">Trucks</NavLink>
-                                <NavDropdown title="Others" id="basic-nav-dropdown">
-                                    <NavDropdown.Item href="/shop/others/flatrails">FlatRails</NavDropdown.Item>
-                                    <NavDropdown.Item href="/shop/others/wax">Wax</NavDropdown.Item>
-                                </NavDropdown>
+                                {/*<NavDropdown title="Others" id="basic-nav-dropdown">*/}
+                                {/*    <NavDropdown.Item href="/shop/others/flatrails">FlatRails</NavDropdown.Item>*/}
+                                {/*    <NavDropdown.Item href="/shop/others/wax">Wax</NavDropdown.Item>*/}
+                                {/*</NavDropdown>*/}
                             </Nav>
                         </Navbar.Collapse>
                     </Navbar>
