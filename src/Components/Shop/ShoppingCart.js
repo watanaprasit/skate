@@ -13,6 +13,7 @@ function ShoppingCart({cart,setCart, show, setShow}) {
         </Tooltip>
     );
 
+    console.log(cart)
 
     const cartAll = cart.map((el) => {
         return (el.price)

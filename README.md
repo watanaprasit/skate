@@ -1,40 +1,60 @@
-Your Project Title
+## The Origins Skateboard Co. - Online Skate Shop
 
-The Origins Skateboard Co. - Online Skate Shop
-
-Description
-
-A platform for buying skateboarding products online
-
-Technical Used
-
-React, react-bootstrap, axios
+#### A platform for buying skateboarding products online
 
 
-Wireframes
-Your step by step planning sketch of your project, that you can post them as an image in here.
+![The Origins Skateboard](https://firebasestorage.googleapis.com/v0/b/riders-5712c.appspot.com/o/readmeImg.png?alt=media&token=15aace13-8352-4643-810b-eff7b5c1d8b0)
 
-User Stories
+### **Wireframe**
 
-The user will be able to select products and purchase them.
-The user will be able to see the current riders for the team.
-....
+![Wireframe](https://firebasestorage.googleapis.com/v0/b/riders-5712c.appspot.com/o/Skate%20wireframe.png?alt=media&token=772c3b13-34d8-4316-8c63-a2baaf8ce2f9)
+
+### **Technologies Used**
+
+React
+
+Bootstrap with react
+
+Axios for API
+
+Firebase
+
+### **User Stories**
+
+User is able to:
+
+- View shopping items
+- Place items in cart
+- Checkout
+- Go to the individual footer links
+- Sign In/Out
 
 
-Planning and Development Process
-A basic story of your planning and developing this project.
+### **Planning**
 
-Problem-Solving Strategy
-What strategy did you use to solve your problems.
+Began with home page, where all the links will lead to. 
 
-Unsolved problems
-List unsolved problems which would be fixed in future iterations.
+Broke it down to the individual components & how the states/props will tie to each other
 
-APIs Used
+Figure out which functions are needed (D.R.Y)
 
-Pixabay API - shopping images
-GoogleMaps API - store locator map
+### **Problem-solving**
+
+Lots of documentation combing & constantly breaking apart my app
+
+### **Unsolved problems**
+
+List:
+
+- Language still not changeable 
+- No loading animation for pages
+- Sign In/Out not linked to page functionality
+
+### **API used**
+
+Pixabay - shopping images
+
+GoogleMaps - store locator map
+
 Firebase - storage of rider info and shopping items' details
 
-Acknowledgments
-References

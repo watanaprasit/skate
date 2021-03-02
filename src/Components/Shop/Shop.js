@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
 
 
+
 function Shop({deckInfo, trucksInfo, wheelsInfo, setCart}) {
     const {item} = useParams();
     const [state, setState] = useState([]);
