@@ -63,10 +63,16 @@ function App() {
                         {/*<Riders />*/}
                     </Route>
                     <Route exact path={'/shop/:item'}>
-                        <Shop deckInfo={deckInfo} wheelsInfo={wheelsInfo} trucksInfo={trucksInfo} setCart={setCart}/>
+                        <Shop deckInfo={deckInfo}
+                              wheelsInfo={wheelsInfo}
+                              trucksInfo={trucksInfo}
+                              setCart={setCart}/>
                     </Route>
                     <Route path={'/shopping-cart'}>
-                        <ShoppingCart cart={cart} setCart={setCart} show={show} setShow={setShow}/>
+                        <ShoppingCart cart={cart}
+                                      setCart={setCart}
+                                      show={show}
+                                      setShow={setShow}/>
                     </Route>
                     <Route path={'/about-us'} component={AboutUs} />
                     <Route path={'/riders'}>
@@ -77,11 +83,11 @@ function App() {
                     <Route exact path={'/*'}>
                         WHAT THE FUCK ARE YOU DOING!
                     </Route>
-                </Switch>
-            </AuthProvider>
 
+                </Switch>
+                <FooterBar />
+            </AuthProvider>
         </Router>
-        <FooterBar />
     </div>
   );
 }

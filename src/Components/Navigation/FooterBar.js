@@ -1,13 +1,14 @@
 import React from 'react';
 import {Nav, Row, Col} from 'react-bootstrap';
-import '../../index.css'
+import '../../index.css';
+import {LinkContainer} from 'react-router-bootstrap';
 
 function FooterBar(props) {
     return (
         <>
             <Row className='header'>
                 <Col md={'3'}>
-                    <Nav.Link className='footer-link' href="/about-us">About Us</Nav.Link>
+                    <Nav.Link className='footer-link' href="./about-us">About Us</Nav.Link>
                 </Col>
                 <Col md={'3'}>
                     <Nav.Link className='footer-link' href="/riders">Riders</Nav.Link>

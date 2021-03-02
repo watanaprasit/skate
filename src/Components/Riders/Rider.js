@@ -86,38 +86,36 @@ function Rider({rider, show, setShow}) {
                                         <Card.Subtitle className='plus-minus-rider'/>
                                         <Row>
                                             <Button onClick={() => handleDelete(el.id)}>Delete Rider</Button>
-                                            <Button variant="primary" onClick={handleShow}>
-                                                Update Info
-                                            </Button>
-                                            <Modal show={show} onHide={handleClose} animation={false}>
-                                                <Modal.Body>
-                                                    <InputGroup>
-                                                        <FormControl
-                                                            onChange={handleInputUpdate}
-                                                            placeholder="new description"
-                                                            name="description"
-                                                        >
-                                                        </FormControl>
-                                                        <FormControl
-                                                            onChange={handleInputUpdate}
-                                                            placeholder="new name"
-                                                            name="name"
-                                                        >
-                                                        </FormControl>
-                                                    </InputGroup>
-                                                </Modal.Body>
-                                                <Modal.Footer>
-                                                    <Button variant="secondary" onClick={handleClose}>
-                                                        Close
-                                                    </Button>
-                                                    <Button variant="primary" onClick={handleUpdate}>
-                                                        Update
-                                                    </Button>
-                                                </Modal.Footer>
-                                            </Modal>
+                                            {/*<Button variant="primary" onClick={handleShow}>*/}
+                                            {/*    Update Info*/}
+                                            {/*</Button>*/}
+                                            {/*<Modal show={show} onHide={handleClose} animation={false}>*/}
+                                            {/*    <Modal.Body>*/}
+                                            {/*        <InputGroup>*/}
+                                            {/*            <FormControl*/}
+                                            {/*                onChange={handleInputUpdate}*/}
+                                            {/*                placeholder="new description"*/}
+                                            {/*                name="description"*/}
+                                            {/*            >*/}
+                                            {/*            </FormControl>*/}
+                                            {/*            <FormControl*/}
+                                            {/*                onChange={handleInputUpdate}*/}
+                                            {/*                placeholder="new name"*/}
+                                            {/*                name="name"*/}
+                                            {/*            >*/}
+                                            {/*            </FormControl>*/}
+                                            {/*        </InputGroup>*/}
+                                            {/*    </Modal.Body>*/}
+                                            {/*    <Modal.Footer>*/}
+                                            {/*        <Button variant="secondary" onClick={handleClose}>*/}
+                                            {/*            Close*/}
+                                            {/*        </Button>*/}
+                                            {/*        <Button variant="primary" onClick={handleUpdate}>*/}
+                                            {/*            Update*/}
+                                            {/*        </Button>*/}
+                                            {/*    </Modal.Footer>*/}
+                                            {/*</Modal>*/}
                                         </Row>
-
-
 
                                     </Card>
 

@@ -3,8 +3,8 @@ import {Nav, Navbar, NavDropdown, Button, Row, Col} from 'react-bootstrap';
 import '../../index.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
-import {NavLink, Link} from 'react-router-dom';
-
+import {NavLink} from 'react-router-dom';
+import { LinkContainer } from 'react-router-bootstrap';
 
 
 function NavigationBar({cart}) {
@@ -13,30 +13,39 @@ function NavigationBar({cart}) {
         <>
             <Row className='header'>
                 <Col md={'4'}>
-                    <Nav.Link className='footer-link' href="/country-language">USA/EN</Nav.Link>
+                    <LinkContainer to='/country-language'>
+                        <Nav.Link className='footer-link'>USA/EN</Nav.Link>
+                    </LinkContainer>
                 </Col>
                 <Col md={'4'}>
-                    <Nav.Link className='footer-link' href="/">The Origins Skateboard</Nav.Link>
+                    <LinkContainer to='/'>
+                        <Nav.Link className='footer-link'>The Origins Skateboard</Nav.Link>
+                    </LinkContainer>
                 </Col>
                 <Col md={'4'}>
-                    <Nav.Link className='footer-link' href="/signin">SIGN IN</Nav.Link>
+                    <LinkContainer to='/signin'>
+                        <Nav.Link className='footer-link'>SIGN IN</Nav.Link>
+                    </LinkContainer>
                 </Col>
             </Row>
             <Row>
                 <Col md={'2'}>
-                    <Navbar.Brand href="/">
+                    <LinkContainer to='/'>
+                        <Navbar.Brand>
                             <img className='logo' src='https://firebasestorage.googleapis.com/v0/b/riders-5712c.appspot.com/o/skate%20logo%2Fskatelogo.png?alt=media&token=3c0c0f6f-a48d-42ed-9837-6efd0f8569f9'/>
-                    </Navbar.Brand>
+                        </Navbar.Brand>
+                    </LinkContainer>
+
                 </Col>
 
                 <Col md={'8'}>
-                    <Navbar className="center-navbar" bg="light" expand="sm">
+                    <Navbar className="center-navbar"  expand="sm">
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav>
-                                <NavLink to="/shop/skateboard">Decks</NavLink>
-                                <NavLink to="/shop/skateboard-wheels">Wheels</NavLink>
-                                <NavLink to="/shop/skaters">Trucks</NavLink>
+                                <NavLink className='center-navbar-links' to="/shop/skateboard">Decks</NavLink>
+                                <NavLink className='center-navbar-links' to="/shop/skateboard-wheels">Wheels</NavLink>
+                                <NavLink className='center-navbar-links' to="/shop/skaters">Trucks</NavLink>
                                 {/*<NavDropdown title="Others" id="basic-nav-dropdown">*/}
                                 {/*    <NavDropdown.Item href="/shop/others/flatrails">FlatRails</NavDropdown.Item>*/}
                                 {/*    <NavDropdown.Item href="/shop/others/wax">Wax</NavDropdown.Item>*/}

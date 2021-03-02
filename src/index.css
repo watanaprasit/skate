@@ -24,7 +24,7 @@ code {
 
 .carousel-text {
   font-family: SquadaOne;
-  color: #000000;
+  color: white;
 }
 
 .center-navbar {
@@ -34,9 +34,9 @@ code {
 }
 
 .center-navbar-links {
-  margin: auto;
-  display: flex;
-  justify-content: space-around;
+  margin: 10%;
+  color: black;
+  font-size: 20px;
 }
 
 .header {
@@ -73,6 +73,7 @@ code {
 
 .middle-container-items-title {
   font-family : SquadaOne;
+  color: black;
 }
 
 .shop-items {

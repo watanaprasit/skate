@@ -11,9 +11,6 @@ function Shop({deckInfo, trucksInfo, wheelsInfo, setCart}) {
     const {item} = useParams();
     const [state, setState] = useState([]);
 
-    //sampleurl
-    // https://pixabay.com/api/?key=20405286-b8c84b9b689264f8e5a805d46&q=boards&image_type=photo&pretty=true
-
     useEffect(() => {
         axios
             .get(`https://pixabay.com/api/?key=20405286-b8c84b9b689264f8e5a805d46&q=${item}&image_type=photo&`)
@@ -39,7 +36,6 @@ function Shop({deckInfo, trucksInfo, wheelsInfo, setCart}) {
         e.target.style.background = 'white';
     }
 
-    // console.log(cart)
     return (
         <>
             <Row>
