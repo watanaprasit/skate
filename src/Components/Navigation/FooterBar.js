@@ -8,16 +8,28 @@ function FooterBar(props) {
         <>
             <Row className='header'>
                 <Col md={'3'}>
-                    <Nav.Link className='footer-link' href="./about-us">About Us</Nav.Link>
+                    <LinkContainer to='./about-us'>
+                        <Nav.Link className='footer-link'>About Us</Nav.Link>
+                    </LinkContainer>
+                    {/*<Nav.Link className='footer-link' href="./about-us">About Us</Nav.Link>*/}
                 </Col>
                 <Col md={'3'}>
-                    <Nav.Link className='footer-link' href="/riders">Riders</Nav.Link>
+                    <LinkContainer to='/riders'>
+                        <Nav.Link className='footer-link' href="/riders">Riders</Nav.Link>
+                    </LinkContainer>
+                    {/*<Nav.Link className='footer-link' href="/riders">Riders</Nav.Link>*/}
                 </Col>
                 <Col md={'3'}>
-                    <Nav.Link className='footer-link' href="/store-locator">Store Locator</Nav.Link>
+                    <LinkContainer to='/store-locator'>
+                        <Nav.Link className='footer-link'>Store Locator</Nav.Link>
+                    </LinkContainer>
+                    {/*<Nav.Link className='footer-link' href="/store-locator">Store Locator</Nav.Link>*/}
                 </Col>
                 <Col md={'3'}>
-                    <Nav.Link className='footer-link' href="/contact-us">Contact Us</Nav.Link>
+                    <LinkContainer to='/contact-us'>
+                        <Nav.Link className='footer-link'>Contact Us</Nav.Link>
+                    </LinkContainer>
+                    {/*<Nav.Link className='footer-link' href="/contact-us">Contact Us</Nav.Link>*/}
                 </Col>
             </Row>
         </>

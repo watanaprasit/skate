@@ -43,6 +43,7 @@ Figure out which functions are needed (D.R.Y)
 Lots of documentation combing & constantly breaking apart my app
 
 ### **Unsolved problems**
+<<<<<<< HEAD
 
 List:
 
@@ -58,3 +59,19 @@ GoogleMaps - store locator map
 
 Firebase - storage of rider info and shopping items' details
 
+=======
+
+List:
+
+- Language still not changeable 
+- No loading animation for pages
+- Sign In/Out not linked to page functionality
+
+### **API used**
+
+Pixabay - shopping images
+
+GoogleMaps - store locator map
+
+Firebase - storage of rider info and shopping items' details
+>>>>>>> 1ea3af5c8c259ab6728a0439dede078f57387aed
