@@ -3,7 +3,7 @@ import {Nav, Navbar, NavDropdown, Button, Row, Col} from 'react-bootstrap';
 import '../../index.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
-import {NavLink} from 'react-router-dom';
+import {NavLink, Link} from 'react-router-dom';
 
 
 

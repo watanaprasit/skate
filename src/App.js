@@ -17,6 +17,9 @@ import {AuthProvider} from "./contexts/AuthContext";
 import SignUp from "./Components/Navigation/Header/Account/SignUp";
 import SignIn from "./Components/Navigation/Header/Account/SignIn";
 import Dashboard from "./Components/Navigation/Header/Account/Dashboard";
+import PrivateRoute from "./Components/Navigation/Header/Account/PrivateRoute";
+import ForgetPassword from "./Components/Navigation/Header/Account/ForgetPassword";
+import UpdateProfile from "./Components/Navigation/Header/Account/UpdateProfile";
 
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import React , {useState, useEffect} from 'react';
@@ -49,15 +52,11 @@ function App() {
                     <Route path ={'/country-language'}>
                         <CountryLanguage />
                     </Route>
-                    <Route path={'/signup'}>
-                        <SignUp />
-                    </Route>
-                    <Route path={'/signin'}>
-                        <SignIn />
-                    </Route>
-                    <Route path={'/dashboard'}>
-                        <Dashboard />
-                    </Route>
+                    <Route path={'/signup'} component={SignUp} />
+                    <Route path={'/signin'} component={SignIn} />
+                    <Route path={'/forgot-password'} component={ForgetPassword}/>
+                    <PrivateRoute path={'/dashboard'} component={Dashboard} />
+                    <PrivateRoute path={'/update-profile'} component={UpdateProfile} />
                     <Route exact path={'/'}>
                         <Carousel2 />
                         <Middle />
@@ -69,18 +68,12 @@ function App() {
                     <Route path={'/shopping-cart'}>
                         <ShoppingCart cart={cart} setCart={setCart} show={show} setShow={setShow}/>
                     </Route>
-                    <Route path={'/about-us'}>
-                        <AboutUs/>
-                    </Route>
+                    <Route path={'/about-us'} component={AboutUs} />
                     <Route path={'/riders'}>
                         <Rider rider={rider} show={show} setShow={setShow}/>
                     </Route>
-                    <Route path={'/store-locator'}>
-                        <StoreLocator />
-                    </Route>
-                    <Route path={'/contact-us'}>
-                        <ContactUs />
-                    </Route>
+                    <Route path={'/store-locator'} component={StoreLocator} />
+                    <Route path={'/contact-us'} component={ContactUs}/>
                     <Route exact path={'/*'}>
                         WHAT THE FUCK ARE YOU DOING!
                     </Route>
