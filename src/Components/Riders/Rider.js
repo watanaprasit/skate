@@ -74,11 +74,12 @@ function Rider({rider, show, setShow}) {
             </Modal>
             <div>
                 <div className='aboutus-text'>
-                    {rider.map((el => (
+
                         <>
                             <Row>
-                                <Col md={'3'}>
-                                    <Card>
+                                {rider.map((el,index) => (
+                                <Col key={index} md={'3'}>
+                                    <Card mt={'1'}>
                                         <Card.Header>{el.name.toUpperCase()}</Card.Header>
                                         <Card.Text>{el.description}</Card.Text>
                                         <Card.Subtitle className='plus-minus-rider'/>
@@ -114,20 +115,14 @@ function Rider({rider, show, setShow}) {
                                             {/*    </Modal.Footer>*/}
                                             {/*</Modal>*/}
                                         </Row>
-
                                     </Card>
-
                                 </Col>
-
+                                ))}
                             </Row>
-
                         </>
-
-                    )))}
                 </div>
             </div>
         </>
-
     );
 }
 

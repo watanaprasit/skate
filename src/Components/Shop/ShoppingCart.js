@@ -56,8 +56,6 @@ function ShoppingCart({cart,setCart, show, setShow}) {
             let temp = [...cart]
             temp[index] = tempObj
             setCart(temp)
-        } else {
-            el.quantity = 0
         }
     }
 

@@ -60,7 +60,7 @@ function App() {
                     <Route exact path={'/'}>
                         <Carousel2 />
                         <Middle />
-                        {/*<Riders />*/}
+                        <Riders />
                     </Route>
                     <Route exact path={'/shop/:item'}>
                         <Shop deckInfo={deckInfo}
