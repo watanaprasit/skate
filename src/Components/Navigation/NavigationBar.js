@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import {NavLink} from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
-
+import {cartTotal} from '../Shop/ShoppingCart'
 
 function NavigationBar({cart}) {
 
@@ -35,9 +35,7 @@ function NavigationBar({cart}) {
                             <img className='logo' src='https://firebasestorage.googleapis.com/v0/b/riders-5712c.appspot.com/o/skate%20logo%2Fskatelogo.png?alt=media&token=3c0c0f6f-a48d-42ed-9837-6efd0f8569f9'/>
                         </Navbar.Brand>
                     </LinkContainer>
-
                 </Col>
-
                 <Col md={'8'}>
                     <Navbar className="center-navbar"  expand="sm">
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -61,6 +59,7 @@ function NavigationBar({cart}) {
                         className="float right">
                         <FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon>
                         <div>{cart.length}</div>
+                        {/*<div>{cartTotal}</div>*/}
                     </NavLink>
 
                 </Col>

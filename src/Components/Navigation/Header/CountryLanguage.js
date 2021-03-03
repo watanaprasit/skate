@@ -3,8 +3,8 @@ import React from 'react';
 function CountryLanguage(props) {
     return (
         <>
-            <div>Choose Country Modal here</div>
-            <div>Choose Language Modal here</div>
+            <div>Choose Country firstAPI for list of country</div>
+            <div>use i18next for language change</div>
         </>
 
     );
