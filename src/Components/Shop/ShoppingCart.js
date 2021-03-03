@@ -1,9 +1,8 @@
 import React from 'react';
 import {Row, Col, Button, ButtonGroup, Modal, Card, Tooltip, OverlayTrigger} from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrashAlt} from '@fortawesome/free-solid-svg-icons';
+import { faTrashAlt, faPlus, faMinus} from '@fortawesome/free-solid-svg-icons';
 import '../../index.css';
-
 
 function ShoppingCart({cart,setCart, show, setShow}) {
 
@@ -39,6 +38,11 @@ function ShoppingCart({cart,setCart, show, setShow}) {
         setCart([...tempCart])
     }
 
+    function deleteCartItem(item) {
+        
+    }
+
+
     return (
         <>
             <h1 className='header'>Your Origins Cart</h1>
@@ -46,13 +50,19 @@ function ShoppingCart({cart,setCart, show, setShow}) {
                     {cart.map((el,index) => (
                     <Card.Body key={index}>
                         <Card.Text>{el.description.toUpperCase()}</Card.Text>
-                        <Card.Subtitle>{el.price}</Card.Subtitle>
+                        <Card.Subtitle>${el.price}</Card.Subtitle>
                         <Card.Subtitle>Qty: {el.quantity}</Card.Subtitle>
                         <FontAwesomeIcon
                             cursor='pointer'
                             onClick={() => deleteFromCart(el)}
                             icon={faTrashAlt}
-                        />
+                        />{'  '}
+                        <FontAwesomeIcon
+                            cursor='pointer'
+                            icon={faMinus}/>{' '}
+                        <FontAwesomeIcon
+                            cursor='pointer'
+                            icon={faPlus}/>
                     </Card.Body>
                         ))}
                 </Row>

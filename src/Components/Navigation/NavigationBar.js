@@ -6,9 +6,9 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import {NavLink} from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 
-function NavigationBar({cart, totalCartCount, setTotalCartCount}) {
+function NavigationBar({cart}) {
 
-    const totalCountArr = cart.map((el,index) => {
+    const totalCountArr = cart.map((el) => {
         return (el.quantity)
     })
 
