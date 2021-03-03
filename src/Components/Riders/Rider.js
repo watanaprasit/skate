@@ -6,7 +6,7 @@ import {addRider, deleteRider, updateRider} from "../../library/library";
 
 function Rider({rider, show, setShow}) {
     const [newRider, setNewRider] = useState([]);
-    const [riderInfo, setRiderInfo] = useState([]);
+    const [riderInfo, setRiderInfo] = useState({});
 
     function handleClose () {
         setShow(false);
@@ -20,6 +20,8 @@ function Rider({rider, show, setShow}) {
         tempObj[e.target.name] = e.target.value
         setNewRider(tempObj)
     };
+
+    // console.log(newRider)
 
     function handleAdd() {
         setShow(false)
@@ -38,7 +40,7 @@ function Rider({rider, show, setShow}) {
 
     function handleUpdate(id) {
         setShow(false)
-        // updateRider("Riders", id, riderInfo)
+        updateRider("Riders", id, riderInfo)
     }
 
     return (

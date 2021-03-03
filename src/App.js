@@ -64,8 +64,11 @@ function App() {
                     </Route>
                     <Route exact path={'/shop/:item'}>
                         <Shop deckInfo={deckInfo}
+                              setDeckInfo={setDeckInfo}
                               wheelsInfo={wheelsInfo}
+                              setWheelsInfo={setWheelsInfo}
                               trucksInfo={trucksInfo}
+                              setTrucksInfo={setTrucksInfo}
                               setCart={setCart}/>
                     </Route>
                     <Route path={'/shopping-cart'}>
