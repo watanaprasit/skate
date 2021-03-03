@@ -1,8 +1,9 @@
 import React from 'react';
-import {Row, Col, Button, ButtonGroup, Modal, Card, Tooltip, OverlayTrigger} from 'react-bootstrap'
+import { Button, Modal, Tooltip, OverlayTrigger, Table} from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt, faPlus, faMinus} from '@fortawesome/free-solid-svg-icons';
 import '../../index.css';
+import { LinkContainer } from 'react-router-bootstrap';
 
 function ShoppingCart({cart,setCart, show, setShow}) {
 
@@ -13,7 +14,7 @@ function ShoppingCart({cart,setCart, show, setShow}) {
     );
 
     const cartAll = cart.map((el) => {
-        return (el.price)
+        return (el.price)*(el.quantity)
     });
 
     const cartTotal = cartAll.reduce((acc, current) => (acc + current),0);
@@ -38,39 +39,87 @@ function ShoppingCart({cart,setCart, show, setShow}) {
         setCart([...tempCart])
     }
 
-    function deleteCartItem(item) {
-        
+    function addCartItem(el) {
+        let tempObj = el
+        el.quantity+=1
+        let index = cart.indexOf(el)
+        let temp = [...cart]
+        temp[index] = tempObj
+        setCart(temp)
     }
 
+    function deleteCartItem(el) {
+        if (el.quantity > 0) {
+            let tempObj = el
+            el.quantity-=1
+            let index = cart.indexOf(el)
+            let temp = [...cart]
+            temp[index] = tempObj
+            setCart(temp)
+        } else {
+            el.quantity = 0
+        }
+    }
+
+    function deleteAll(){
+        setCart([]);
+    }
 
     return (
         <>
             <h1 className='header'>Your Origins Cart</h1>
-                <Row className='shop-items'>
+               <Table striped bordered hover variant="dark">
+                   <thead>
+                        <tr>
+                            <th>Items</th>
+                            <th>Qty</th>
+                            <th>Price</th>
+                            <th>Sub-Total</th>
+                            <th>
+                                <FontAwesomeIcon
+                                    cursor='pointer'
+                                    onClick={() => deleteAll()}
+                                    icon={faTrashAlt}/>
+                            </th>
+                        </tr>
+                   </thead>
                     {cart.map((el,index) => (
-                    <Card.Body key={index}>
-                        <Card.Text>{el.description.toUpperCase()}</Card.Text>
-                        <Card.Subtitle>${el.price}</Card.Subtitle>
-                        <Card.Subtitle>Qty: {el.quantity}</Card.Subtitle>
-                        <FontAwesomeIcon
-                            cursor='pointer'
-                            onClick={() => deleteFromCart(el)}
-                            icon={faTrashAlt}
-                        />{'  '}
-                        <FontAwesomeIcon
-                            cursor='pointer'
-                            icon={faMinus}/>{' '}
-                        <FontAwesomeIcon
-                            cursor='pointer'
-                            icon={faPlus}/>
-                    </Card.Body>
-                        ))}
-                </Row>
-
+                        <tbody>
+                            <tr key={index}>
+                                <td>{el.description}</td>
+                                <td>
+                                    {el.quantity}
+                                    {'   '}
+                                    <FontAwesomeIcon
+                                        icon={faPlus}
+                                        cursor='pointer'
+                                        onClick={() => addCartItem(el)}
+                                    /> {'   '}
+                                    <FontAwesomeIcon
+                                        icon={faMinus}
+                                        cursor='pointer'
+                                        onClick={() => deleteCartItem(el)}
+                                    />
+                                </td>
+                                <td>{el.price}</td>
+                                <td>{(el.price)*(el.quantity)}</td>
+                                <td>
+                                    <FontAwesomeIcon
+                                        cursor='pointer'
+                                        onClick={() => deleteFromCart(el)}
+                                        icon={faTrashAlt} />
+                                </td>
+                            </tr>
+                        </tbody>
+                    ))}
+               </Table>
             <div>
-                <ButtonGroup size="lg" className="mb-2">
-                    <Button onClick={handleShow}>Checkout</Button>
-                </ButtonGroup>
+
+                <Button onClick={handleShow}>Checkout</Button>{'   '}
+                <LinkContainer to='./shop/skaters'>
+                    <Button>Continue Shopping</Button>
+                </LinkContainer>
+
                 <Modal className='shop-items' show={show} onHide={handleClose} animation={false}>
                     <Modal.Header closeButton>
                         <Modal.Title>Your Origins Total</Modal.Title>
@@ -96,8 +145,9 @@ function ShoppingCart({cart,setCart, show, setShow}) {
                 </Modal>
             </div>
         </>
-
     );
 }
 
 export default ShoppingCart;
+
+

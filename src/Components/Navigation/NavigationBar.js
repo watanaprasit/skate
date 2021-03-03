@@ -14,6 +14,12 @@ function NavigationBar({cart}) {
 
     const totalCount = totalCountArr.reduce((acc,current) => (acc+current), 0);
 
+    const cartAll = cart.map((el) => {
+        return (el.price)*(el.quantity)
+    });
+
+    const cartTotal = cartAll.reduce((acc, current) => (acc + current),0);
+
     return (
         <>
             <Row className='header'>
@@ -57,16 +63,14 @@ function NavigationBar({cart}) {
                         </Navbar.Collapse>
                     </Navbar>
                 </Col>
-
                 <Col md={'2'}>
                     <NavLink
                         to="/shopping-cart"
                         className="float right">
                         <FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon>
                         <div>{totalCount}</div>
-                        {/*<div>{cartTotal}</div>*/}
+                        <div>${cartTotal}</div>
                     </NavLink>
-
                 </Col>
             </Row>
 

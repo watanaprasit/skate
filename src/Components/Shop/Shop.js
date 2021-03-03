@@ -46,8 +46,6 @@ function Shop({deckInfo, setDeckInfo,
     }, [])
 
 
-    // console.log(deckInfo)
-
     function addToCart(el) {
         if (!cart.includes(el)) {
             el.quantity = 1
@@ -153,62 +151,3 @@ function Shop({deckInfo, setDeckInfo,
 export default Shop;
 
 
-
-
-// <>
-//     <Row>
-//         {state.map((el, index) => (
-//             <Card.Img key={index} src={el.webformatURL} style={{width: '15%'}}/>
-//         ))}
-//         {(() => {
-//             switch (item) {
-//                 case 'skateboard':
-//                     return (
-//                         deckInfo.map((el, index) => (
-//                             <>
-//                                 <Card.Body className="shop-items">
-//                                     <Card.Text key={index}>{el.description.toUpperCase()}</Card.Text>
-//                                     <Card.Subtitle>Price : ${el.price}</Card.Subtitle>
-//                                     <FontAwesomeIcon cursor='pointer'
-//                                                      onMouseOver={background}
-//                                                      onMouseOut={backgroundOut}
-//                                                      onClick={() => addToCart(el)}
-//                                                      icon={faCartPlus}/>
-//                                 </Card.Body>
-//                             </>
-//
-//                         ))
-//                     )
-//                 case 'skateboard-wheels':
-//                     return (
-//                         wheelsInfo.map((el, index) => (
-//                             <Card.Body className="shop-items">
-//                                 <Card.Text key={index}>{el.description.toUpperCase()}</Card.Text>
-//                                 <Card.Subtitle>Price : ${el.price}</Card.Subtitle>
-//                                 <FontAwesomeIcon cursor='pointer'
-//                                                  onMouseOver={background}
-//                                                  onMouseOut={backgroundOut}
-//                                                  onClick={() => addToCart(el)}
-//                                                  icon={faCartPlus}/>
-//                             </Card.Body>
-//                         ))
-//                     )
-//                 case 'skaters':
-//                     return (
-//                         trucksInfo.map((el, index) => (
-//                             <Card.Body className="shop-items">
-//                                 <Card.Text key={index}>{el.description.toUpperCase()}</Card.Text>
-//                                 <Card.Subtitle>Price : ${el.price}</Card.Subtitle>
-//                                 <FontAwesomeIcon cursor='pointer'
-//                                                  onMouseOver={background}
-//                                                  onMouseOut={backgroundOut}
-//                                                  onClick={() => addToCart(el)}
-//                                                  icon={faCartPlus}/>
-//                             </Card.Body>
-//                         ))
-//                     )
-//             }
-//         })()}
-//
-//     </Row>
-// </>
