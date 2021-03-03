@@ -9,7 +9,8 @@ import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
 function Shop({deckInfo, setDeckInfo,
               trucksInfo, setTrucksInfo,
               wheelsInfo, setWheelsInfo,
-              setCart}) {
+              cart, setCart
+              }) {
 
     const {item} = useParams();
 
@@ -48,8 +49,20 @@ function Shop({deckInfo, setDeckInfo,
     // console.log(deckInfo)
 
     function addToCart(el) {
-        setCart(prevState => ([...prevState, el]))
+        if (!cart.includes(el)) {
+            el.quantity = 1
+            setCart(prevState => ([...prevState, el]))
+        } else {
+            let tempObj = el
+            el.quantity+=1
+            let index = cart.indexOf(el)
+            let temp = [...cart]
+            temp[index] = tempObj
+            setCart(temp)
+        }
     }
+
+
 
     function background(e) {
         e.target.style.background = 'green';

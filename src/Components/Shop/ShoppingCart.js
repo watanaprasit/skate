@@ -39,12 +39,6 @@ function ShoppingCart({cart,setCart, show, setShow}) {
         setCart([...tempCart])
     }
 
-    function cartItemQuantity(item) {
-
-    }
-
-    console.log(cart)
-
     return (
         <>
             <h1 className='header'>Your Origins Cart</h1>
@@ -53,6 +47,7 @@ function ShoppingCart({cart,setCart, show, setShow}) {
                     <Card.Body key={index}>
                         <Card.Text>{el.description.toUpperCase()}</Card.Text>
                         <Card.Subtitle>{el.price}</Card.Subtitle>
+                        <Card.Subtitle>Qty: {el.quantity}</Card.Subtitle>
                         <FontAwesomeIcon
                             cursor='pointer'
                             onClick={() => deleteFromCart(el)}

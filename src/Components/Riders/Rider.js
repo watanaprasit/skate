@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
 import {Card, Row, Col, Modal, Button, InputGroup, FormControl} from 'react-bootstrap'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faPlus, faMinus} from '@fortawesome/free-solid-svg-icons'
 import {addRider, deleteRider, updateRider} from "../../library/library";
 
 function Rider({rider, show, setShow}) {
@@ -20,8 +18,6 @@ function Rider({rider, show, setShow}) {
         tempObj[e.target.name] = e.target.value
         setNewRider(tempObj)
     };
-
-    // console.log(newRider)
 
     function handleAdd() {
         setShow(false)

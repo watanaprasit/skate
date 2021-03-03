@@ -32,6 +32,7 @@ function App() {
     const [wheelsInfo, setWheelsInfo] = useState([])
     const [trucksInfo, setTrucksInfo] = useState([])
     const [cart, setCart] = useState([])
+    const [totalCartCount, setTotalCartCount] = useState([])
     const [show, setShow] = useState(false);
 
 
@@ -47,7 +48,10 @@ function App() {
     <div className="App">
         <Router>
             <AuthProvider>
-                <NavigationBar cart={cart} />
+                <NavigationBar cart={cart}
+                               totalCartCount={totalCartCount}
+                               setTotalCartCount={setTotalCartCount}
+                />
                 <Switch>
                     <Route path ={'/country-language'}>
                         <CountryLanguage />
@@ -69,7 +73,10 @@ function App() {
                               setWheelsInfo={setWheelsInfo}
                               trucksInfo={trucksInfo}
                               setTrucksInfo={setTrucksInfo}
-                              setCart={setCart}/>
+                              cart={cart}
+                              setCart={setCart}
+
+                        />
                     </Route>
                     <Route path={'/shopping-cart'}>
                         <ShoppingCart cart={cart}

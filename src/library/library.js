@@ -49,3 +49,4 @@ export async function getItemInfo(collection, setItemInfo) {
         console.log(err)
     })
 }
+

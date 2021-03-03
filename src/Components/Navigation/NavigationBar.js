@@ -5,9 +5,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import {NavLink} from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
-import {cartTotal} from '../Shop/ShoppingCart'
 
-function NavigationBar({cart}) {
+function NavigationBar({cart, totalCartCount, setTotalCartCount}) {
+
+    const totalCountArr = cart.map((el,index) => {
+        return (el.quantity)
+    })
+
+    const totalCount = totalCountArr.reduce((acc,current) => (acc+current), 0);
 
     return (
         <>
@@ -58,7 +63,7 @@ function NavigationBar({cart}) {
                         to="/shopping-cart"
                         className="float right">
                         <FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon>
-                        <div>{cart.length}</div>
+                        <div>{totalCount}</div>
                         {/*<div>{cartTotal}</div>*/}
                     </NavLink>
 
