@@ -27,9 +27,9 @@ function Shop({deckInfo, setDeckInfo,
                 let tempArr3 = []
                 for (let i = 0; i < 6; i++) {
                     // tempArr.push(res.data.hits[i])
-                    tempArr.push({ imageURL: res.data.hits[i].webformatURL, ...deckInfo[i]})
-                    tempArr2.push({ imageURL: res.data.hits[i].webformatURL, ...wheelsInfo[i]})
-                    tempArr3.push({ imageURL: res.data.hits[i].webformatURL, ...trucksInfo[i]})
+                    tempArr.push({imageURL: res.data.hits[i].webformatURL, ...deckInfo[i]})
+                    tempArr2.push({imageURL: res.data.hits[i].webformatURL, ...wheelsInfo[i]})
+                    tempArr3.push({imageURL: res.data.hits[i].webformatURL, ...trucksInfo[i]})
                     // console.log(res.data.hits)
                     // console.log(deckInfo[i])
 
@@ -61,77 +61,75 @@ function Shop({deckInfo, setDeckInfo,
 
     return (
         <>
-                {(() => {
+            {(() => {
                 switch (item) {
-                case 'skateboard':
-                return (
-                deckInfo.map((el, index) => (
-                <>
-                    <Row>
-                        <Col md={'3'}>
-                            <Card>
-                                <Card.Img src={el.imageURL}/>
-                                <Card.Body className="shop-items">
-                                    <Card.Text key={index}>{el.description}</Card.Text>
-                                    <Card.Subtitle>Price : ${el.price}</Card.Subtitle>
-                                    <FontAwesomeIcon cursor='pointer'
-                                                     onMouseOver={background}
-                                                     onMouseOut={backgroundOut}
-                                                     onClick={() => addToCart(el)}
-                                                     icon={faCartPlus}/>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    </Row>
-                </>
+                    case 'skateboard':
+                        return(
+                                <Row>
+                                    {deckInfo.map((el, index) => (
+                                        <Col md={'3'}>
+                                            <Card key={index}>
+                                                <Card.Img src={el.imageURL}/>
+                                                <Card.Body className="shop-items">
+                                                    <Card.Text key={index}>{el.description}</Card.Text>
+                                                    <Card.Subtitle>Price : ${el.price}</Card.Subtitle>
+                                                    <FontAwesomeIcon cursor='pointer'
+                                                                     onMouseOver={background}
+                                                                     onMouseOut={backgroundOut}
+                                                                     onClick={() => addToCart(el)}
+                                                                     icon={faCartPlus}/>
+                                                </Card.Body>
+                                            </Card>
+                                        </Col>
+                                    ))}
+                                </Row>
 
-                ))
-                )
-                case 'skateboard-wheels':
-                return (
-                wheelsInfo.map((el, index) => (
-                <>
-                    <Row>
-                        <Col md={'2'}>
-                            <Card.Img src={el.imageURL}/>
-                            <Card.Body className="shop-items">
-                                <Card.Text key={index}>{el.description}</Card.Text>
-                                <Card.Subtitle>Price : ${el.price}</Card.Subtitle>
-                                <FontAwesomeIcon cursor='pointer'
-                                                 onMouseOver={background}
-                                                 onMouseOut={backgroundOut}
-                                                 onClick={() => addToCart(el)}
-                                                 icon={faCartPlus}/>
-                            </Card.Body>
-                        </Col>
-                    </Row>
-                </>
-                ))
-                )
-                case 'skaters':
-                return (
-                trucksInfo.map((el, index) => (
-                    <>
-                        <Row>
-                            <Col md={'2'}>
-                                <Card.Img src={el.imageURL}/>
-                                <Card.Body className="shop-items">
-                                    <Card.Text key={index}>{el.description}</Card.Text>
-                                    <Card.Subtitle>Price : ${el.price}</Card.Subtitle>
-                                    <FontAwesomeIcon cursor='pointer'
-                                                     onMouseOver={background}
-                                                     onMouseOut={backgroundOut}
-                                                     onClick={() => addToCart(el)}
-                                                     icon={faCartPlus}/>
-                                </Card.Body>
-                            </Col>
-                        </Row>
-                    </>
+                            )
 
-                ))
-                )
-            }
-                })()}
+                    case 'skateboard-wheels':
+                        return (
+                                <Row>
+                                    {wheelsInfo.map((el, index) => (
+                                    <Col md={'3'}>
+                                        <Card key={index}>
+                                            <Card.Img src={el.imageURL}/>
+                                            <Card.Body className="shop-items">
+                                                <Card.Text key={index}>{el.description}</Card.Text>
+                                                <Card.Subtitle>Price : ${el.price}</Card.Subtitle>
+                                                <FontAwesomeIcon cursor='pointer'
+                                                                 onMouseOver={background}
+                                                                 onMouseOut={backgroundOut}
+                                                                 onClick={() => addToCart(el)}
+                                                                 icon={faCartPlus}/>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                        ))}
+                                </Row>
+                        )
+                    case 'skaters':
+                        return (
+                                <Row>
+                                    {trucksInfo.map((el, index) => (
+                                    <Col md={'3'}>
+                                        <Card key={index}>
+                                            <Card.Img src={el.imageURL}/>
+                                            <Card.Body className="shop-items">
+                                                <Card.Text key={index}>{el.description}</Card.Text>
+                                                <Card.Subtitle>Price : ${el.price}</Card.Subtitle>
+                                                <FontAwesomeIcon cursor='pointer'
+                                                                 onMouseOver={background}
+                                                                 onMouseOut={backgroundOut}
+                                                                 onClick={() => addToCart(el)}
+                                                                 icon={faCartPlus}/>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                        ))}
+                                </Row>
+                        )
+                }
+            })()}
 
         </>
 

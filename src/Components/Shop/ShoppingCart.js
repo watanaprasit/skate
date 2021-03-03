@@ -39,12 +39,18 @@ function ShoppingCart({cart,setCart, show, setShow}) {
         setCart([...tempCart])
     }
 
+    function cartItemQuantity(item) {
+
+    }
+
+    console.log(cart)
+
     return (
         <>
             <h1 className='header'>Your Origins Cart</h1>
-            {cart.map((el,index) => (
-                <Row className='shop-items' key={index}>
-                    <Card.Body>
+                <Row className='shop-items'>
+                    {cart.map((el,index) => (
+                    <Card.Body key={index}>
                         <Card.Text>{el.description.toUpperCase()}</Card.Text>
                         <Card.Subtitle>{el.price}</Card.Subtitle>
                         <FontAwesomeIcon
@@ -53,9 +59,9 @@ function ShoppingCart({cart,setCart, show, setShow}) {
                             icon={faTrashAlt}
                         />
                     </Card.Body>
+                        ))}
                 </Row>
-                )
-            )}
+
             <div>
                 <ButtonGroup size="lg" className="mb-2">
                     <Button onClick={handleShow}>Checkout</Button>
