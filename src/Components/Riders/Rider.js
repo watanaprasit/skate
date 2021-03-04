@@ -4,7 +4,9 @@ import {addRider, deleteRider, updateRider} from "../../library/library";
 
 function Rider({rider, show, setShow}) {
     const [newRider, setNewRider] = useState([]);
-    const [riderInfo, setRiderInfo] = useState({});
+    const [riderInfo, setRiderInfo] = useState([]);
+    const [count, setCount] = useState(0)
+
 
     function handleClose () {
         setShow(false);
@@ -19,12 +21,16 @@ function Rider({rider, show, setShow}) {
         setNewRider(tempObj)
     };
 
+
     function handleAdd() {
         setShow(false)
-        addRider("Riders", newRider)
+        setCount(count+1)
+        console.log(count)
+        addRider("Riders", newRider, count)
     }
 
     function handleDelete(id){
+        setCount(count-1)
         deleteRider("Riders", id)
     }
 
@@ -36,9 +42,9 @@ function Rider({rider, show, setShow}) {
 
     function handleUpdate(id) {
         setShow(false)
-        updateRider("Riders", id, riderInfo)
+        updateRider("Riders", id)
     }
-
+    
     return (
         <>
             <h2 className='header'>The Origin Riders</h2>
@@ -109,7 +115,7 @@ function Rider({rider, show, setShow}) {
                                             {/*        <Button variant="secondary" onClick={handleClose}>*/}
                                             {/*            Close*/}
                                             {/*        </Button>*/}
-                                            {/*        <Button variant="primary" onClick={handleUpdate}>*/}
+                                            {/*        <Button variant="primary" onClick={() => {handleUpdate()}}>*/}
                                             {/*            Update*/}
                                             {/*        </Button>*/}
                                             {/*    </Modal.Footer>*/}

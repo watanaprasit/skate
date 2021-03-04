@@ -23,16 +23,19 @@ export async function getRiders(collection, setRiders) {
     })
 }
 
-export async function addRider(collection, data) {
-   await db.collection(collection).add(data)
+export async function addRider(collection, data, count) {
+
+   await db.collection(collection).doc(`${count}`).set({...data,id:`${count}`})
 }
 
 export async function deleteRider(collection, id) {
      await db.collection(collection).doc(id).delete()
 }
 
-export async function updateRider(collection,id, setRiderDetails) {
-    await db.collection(collection).doc(id).update()
+export async function updateRider(collection,id) {
+    await db.collection(collection).doc(id).update({
+
+    })
 }
 
 export async function getItemInfo(collection, setItemInfo) {

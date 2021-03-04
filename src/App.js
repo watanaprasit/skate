@@ -35,6 +35,7 @@ function App() {
     const [show, setShow] = useState(false);
 
 
+
     useEffect(() => {
         getRiders("Riders", setRiders)
         getItemInfo("Decks", setDeckInfo)
@@ -82,7 +83,11 @@ function App() {
                     </Route>
                     <Route path={'/about-us'} component={AboutUs} />
                     <Route path={'/riders'}>
-                        <Rider rider={rider} show={show} setShow={setShow}/>
+                        <Rider rider={rider}
+                               show={show}
+                               setShow={setShow}
+                               />
+
                     </Route>
                     <Route path={'/store-locator'} component={StoreLocator} />
                     <Route path={'/contact-us'} component={ContactUs}/>
