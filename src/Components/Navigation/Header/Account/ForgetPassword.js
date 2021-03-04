@@ -3,7 +3,7 @@ import { Form, Button, Card, Alert } from 'react-bootstrap';
 import {useAuth} from "../../../../contexts/AuthContext";
 import {Link} from 'react-router-dom';
 
-function ForgetPassword(props) {
+function ForgetPassword() {
     const emailRef = useRef();
     const {resetPassword} = useAuth();
     const [error, setError] = useState('');
@@ -12,7 +12,6 @@ function ForgetPassword(props) {
 
     async function handleSubmit(e) {
         e.preventDefault()
-
 
         try {
             setMessage('')

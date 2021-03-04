@@ -7,7 +7,7 @@ export function useAuth() {
     return useContext(AuthContext)
 }
 
-export function AuthProvider({children}) {
+export function AuthProvider({children,authenticated,setAuthenticated}) {
     const [currentUser, setCurrentUser] = useState()
     const [loading, setLoading] = useState(true)
 
@@ -16,10 +16,14 @@ export function AuthProvider({children}) {
     }
 
     function signIn(email, password) {
+        setAuthenticated(true)
+        console.log(authenticated)
         return auth.signInWithEmailAndPassword(email, password)
     }
 
     function logout() {
+        setAuthenticated(false)
+        console.log(authenticated)
         return auth.signOut()
     }
 
@@ -34,6 +38,7 @@ export function AuthProvider({children}) {
     function updatePassword(email) {
         return currentUser.updatePassword(email)
     }
+
 
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {

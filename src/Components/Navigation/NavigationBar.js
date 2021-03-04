@@ -6,7 +6,7 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import {NavLink} from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 
-function NavigationBar({cart}) {
+function NavigationBar({cart, authenticated}) {
 
     const totalCountArr = cart.map((el) => {
         return (el.quantity)
@@ -34,15 +34,18 @@ function NavigationBar({cart}) {
                     </LinkContainer>
                 </Col>
                 <Col md={'4'}>
+                    !currentuser ? output as usual below, else output that user is signed in*/}
+                    {authenticated == false ?
                     <LinkContainer to='/signin'>
                         <Nav.Link className='footer-link'>SIGN IN</Nav.Link>
-                    </LinkContainer>
+                    </LinkContainer> :
+                        <div>Welcome User</div>}
                 </Col>
             </Row>
             <Row>
                 <Col md={'2'}>
                     <LinkContainer to='/'>
-                        <Navbar.Brand>
+                        <Navbar.Brand >
                             <img className='logo' src='https://firebasestorage.googleapis.com/v0/b/riders-5712c.appspot.com/o/skate%20logo%2Fskatelogo.png?alt=media&token=3c0c0f6f-a48d-42ed-9837-6efd0f8569f9'/>
                         </Navbar.Brand>
                     </LinkContainer>

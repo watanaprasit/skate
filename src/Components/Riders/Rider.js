@@ -49,7 +49,7 @@ function Rider({rider, show, setShow}) {
         <>
             <h2 className='header'>The Origin Riders</h2>
 
-            <Button variant="primary" onClick={handleShow}>
+            <Button variant="primary" onClick={handleShow} className='mb-2'>
                 Add Rider
             </Button>
             <Modal show={show} onHide={handleClose} animation={false}>
@@ -85,11 +85,10 @@ function Rider({rider, show, setShow}) {
                             <Row>
                                 {rider.map((el,index) => (
                                 <Col key={index} md={'3'}>
-                                    <Card mt={'1'}>
+                                    <Card className='mb-2'>
                                         <Card.Header>{el.name.toUpperCase()}</Card.Header>
                                         <Card.Text>{el.description}</Card.Text>
                                         <Card.Subtitle className='plus-minus-rider'/>
-                                        <Row>
                                             <Button onClick={() => handleDelete(el.id)}>Delete Rider</Button>
                                             {/*<Button variant="primary" onClick={handleShow}>*/}
                                             {/*    Update Info*/}
@@ -120,10 +119,9 @@ function Rider({rider, show, setShow}) {
                                             {/*        </Button>*/}
                                             {/*    </Modal.Footer>*/}
                                             {/*</Modal>*/}
-                                        </Row>
                                     </Card>
                                 </Col>
-                                ))}
+                                        ))}
                             </Row>
                         </>
                 </div>

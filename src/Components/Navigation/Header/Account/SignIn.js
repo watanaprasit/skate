@@ -3,14 +3,13 @@ import {Card, Form, Button, Alert} from 'react-bootstrap';
 import {Link, useHistory} from 'react-router-dom';
 import {useAuth} from "../../../../contexts/AuthContext";
 
-function SignIn(props) {
+function SignIn() {
     const emailRef = useRef()
     const passwordRef = useRef()
     const { signIn } = useAuth()
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
     const history = useHistory()
-
 
     async function handleSubmit(e) {
         e.preventDefault()
@@ -20,15 +19,11 @@ function SignIn(props) {
             setLoading(true)
             await signIn(emailRef.current.value, passwordRef.current.value)
             history.push("/dashboard")
-
         } catch {
             setError("Failed to sign in")
         }
-
         setLoading(false)
     }
-
-
 
     return (
         <>

@@ -32,6 +32,8 @@ function App() {
     const [trucksInfo, setTrucksInfo] = useState([])
     const [cart, setCart] = useState([])
     const [show, setShow] = useState(false);
+    const [authenticated, setAuthenticated] = useState(false)
+
 
     useEffect(() => {
         getRiders("Riders", setRiders)
@@ -44,8 +46,12 @@ function App() {
   return (
     <div className="App">
         <Router>
-            <AuthProvider>
-                <NavigationBar cart={cart}/>
+            <AuthProvider authenticated={authenticated}
+                          setAuthenticated={setAuthenticated}
+            >
+                <NavigationBar cart={cart}
+                               authenticated={authenticated}
+                />
                 <Switch>
                     <Route path ={'/country-language'}>
                         <CountryLanguage />

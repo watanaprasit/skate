@@ -3,9 +3,7 @@ import {Card, Form, Button, Alert} from 'react-bootstrap'
 import {Link, useHistory} from 'react-router-dom'
 import {useAuth} from "../../../../contexts/AuthContext";
 
-
-
-function SignUp(props) {
+function SignUp() {
     const emailRef = useRef()
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
@@ -20,17 +18,14 @@ function SignUp(props) {
         if (passwordRef.current.value !== passwordConfirmRef.current.value) {
             return setError('Password do not match!')
         }
-
         try {
             setError('')
             setLoading(true)
             await signUp(emailRef.current.value, passwordRef.current.value)
             history.push("/signin")
-
         } catch {
             setError('Failed to create an account')
         }
-
         setLoading(false)
     }
 
@@ -62,10 +57,7 @@ function SignUp(props) {
             <div className="w-100 text-center mt-2">
                 Already have an account? <Link to="/signin">Sign In</Link>
             </div>
-
         </>
-
-
     );
 }
 
