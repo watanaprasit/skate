@@ -1,7 +1,7 @@
 import React from 'react';
-import {Nav, Row, Col, Card} from 'react-bootstrap';
+import {Row, Col, Card} from 'react-bootstrap';
 
-function Middle(props) {
+function Middle() {
     return (
         <div>
             <Row className='middle-container'>
@@ -53,6 +53,5 @@ function Middle(props) {
         </div>
     );
 }
-
 
 export default Middle;

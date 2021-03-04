@@ -32,10 +32,8 @@ function Carousel2() {
                     </Carousel.Item>
                 </Carousel>
             </div>
-
     )
 }
-
 
 export default Carousel2;
 

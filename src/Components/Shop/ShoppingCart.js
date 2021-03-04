@@ -49,7 +49,7 @@ function ShoppingCart({cart,setCart, show, setShow}) {
     }
 
     function deleteCartItem(el) {
-        if (el.quantity > 0) {
+        if (el.quantity >= 2) {
             let tempObj = el
             el.quantity-=1
             let index = cart.indexOf(el)

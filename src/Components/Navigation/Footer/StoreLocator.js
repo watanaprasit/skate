@@ -13,7 +13,7 @@ const center = {
     lng: -73.9938329
 };
 
-function StoreLocator(props) {
+function StoreLocator() {
     return (
         <>
             <Row>
@@ -40,14 +40,9 @@ function StoreLocator(props) {
                         </GoogleMap>
                     </LoadScript>
                 </Col>
-
             </Row>
-
         </>
-
     )
 }
-
-
 
 export default StoreLocator;

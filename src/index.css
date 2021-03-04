@@ -8,6 +8,10 @@
   src: local('SquadaOne'), url(./Fonts/SquadaOne-Regular.ttf) format('truetype');
 }
 
+.App {
+  text-align: center;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

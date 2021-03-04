@@ -1,7 +1,7 @@
 import React from 'react';
 import {Form, Button} from 'react-bootstrap';
 
-function ContactUs(props) {
+function ContactUs() {
     return (
         <Form>
             <Form.Group controlId="exampleForm.ControlInput1">

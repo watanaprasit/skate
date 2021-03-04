@@ -1,5 +1,5 @@
 import React from 'react';
-import {Nav, Navbar, NavDropdown, Button, Row, Col} from 'react-bootstrap';
+import {Nav, Navbar, Row, Col} from 'react-bootstrap';
 import '../../index.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
@@ -55,10 +55,6 @@ function NavigationBar({cart}) {
                                 <NavLink className='center-navbar-links' to="/shop/skateboard">Decks</NavLink>
                                 <NavLink className='center-navbar-links' to="/shop/skateboard-wheels">Wheels</NavLink>
                                 <NavLink className='center-navbar-links' to="/shop/skaters">Trucks</NavLink>
-                                {/*<NavDropdown title="Others" id="basic-nav-dropdown">*/}
-                                {/*    <NavDropdown.Item href="/shop/others/flatrails">FlatRails</NavDropdown.Item>*/}
-                                {/*    <NavDropdown.Item href="/shop/others/wax">Wax</NavDropdown.Item>*/}
-                                {/*</NavDropdown>*/}
                             </Nav>
                         </Navbar.Collapse>
                     </Navbar>
@@ -73,11 +69,7 @@ function NavigationBar({cart}) {
                     </NavLink>
                 </Col>
             </Row>
-
-
         </>
-
-
     );
 }
 

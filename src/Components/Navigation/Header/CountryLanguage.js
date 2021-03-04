@@ -1,6 +1,6 @@
 import React from 'react';
 
-function CountryLanguage(props) {
+function CountryLanguage() {
     return (
         <>
             <div>Choose Country firstAPI for list of country</div>

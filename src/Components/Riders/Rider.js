@@ -44,7 +44,7 @@ function Rider({rider, show, setShow}) {
         setShow(false)
         updateRider("Riders", id)
     }
-    
+
     return (
         <>
             <h2 className='header'>The Origin Riders</h2>

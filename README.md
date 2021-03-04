@@ -42,8 +42,11 @@ Figure out which functions are needed (D.R.Y)
 
 Lots of documentation combing & constantly breaking apart my app
 
+Breakdown parts of your project into sprints
+
+If it's not a crucial piece of your component, you can always move forward and circle around later with assistance
+
 ### **Unsolved problems**
-<<<<<<< HEAD
 
 List:
 
@@ -53,25 +56,11 @@ List:
 
 ### **API used**
 
-Pixabay - shopping images
+Pixabay - Shopping Images
 
-GoogleMaps - store locator map
+Firebase - Decks/Trucks/Wheels information
 
-Firebase - storage of rider info and shopping items' details
+GoogleMaps - Store Locator
 
-=======
+### **Acknowledgments**
 
-List:
-
-- Language still not changeable 
-- No loading animation for pages
-- Sign In/Out not linked to page functionality
-
-### **API used**
-
-Pixabay - shopping images
-
-GoogleMaps - store locator map
-
-Firebase - storage of rider info and shopping items' details
->>>>>>> 1ea3af5c8c259ab6728a0439dede078f57387aed

@@ -2,7 +2,7 @@ import React from 'react';
 import {Row, Col, Card} from 'react-bootstrap'
 import '../../../index.css'
 
-function AboutUs(props) {
+function AboutUs() {
     return (
         <>
             <div className='header'>About Us</div>
@@ -23,8 +23,6 @@ function AboutUs(props) {
                     <p>Truck Gap by Daewon Song in SoCal</p>
                 </Col>
             </Row>
-
-
         </>
     );
 }

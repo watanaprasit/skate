@@ -1,5 +1,4 @@
-import './App.css';
-
+import './index.css'
 import Shop from "./Components/Shop/Shop";
 import ShoppingCart from "./Components/Shop/ShoppingCart";
 import Carousel2 from "./Components/Carousel/Carousel2";
@@ -33,8 +32,6 @@ function App() {
     const [trucksInfo, setTrucksInfo] = useState([])
     const [cart, setCart] = useState([])
     const [show, setShow] = useState(false);
-
-
 
     useEffect(() => {
         getRiders("Riders", setRiders)
@@ -87,14 +84,12 @@ function App() {
                                show={show}
                                setShow={setShow}
                                />
-
                     </Route>
                     <Route path={'/store-locator'} component={StoreLocator} />
                     <Route path={'/contact-us'} component={ContactUs}/>
                     <Route exact path={'/*'}>
                         WHAT THE FUCK ARE YOU DOING!
                     </Route>
-
                 </Switch>
                 <FooterBar />
             </AuthProvider>

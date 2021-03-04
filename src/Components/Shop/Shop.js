@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react';
-import {useParams, NavLink} from 'react-router-dom';
+import React, {useEffect} from 'react';
+import {useParams} from 'react-router-dom';
 import axios from 'axios';
-import { Row, Card, Col, Grid} from 'react-bootstrap';
+import { Row, Card, Col} from 'react-bootstrap';
 import '../../index.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
@@ -14,11 +14,6 @@ function Shop({deckInfo, setDeckInfo,
 
     const {item} = useParams();
 
-    // const getInfo = (info) => {
-    //     axios.get....
-    //    tempArr.push({ imageURL: res.data.hits[i].webformatURL, ...info[i})
-    // }
-
     useEffect(() => {
         axios
             .get(`https://pixabay.com/api/?key=20405286-b8c84b9b689264f8e5a805d46&q=${item}&image_type=photo&`)
@@ -27,20 +22,13 @@ function Shop({deckInfo, setDeckInfo,
                 let tempArr2 = []
                 let tempArr3 = []
                 for (let i = 0; i < 6; i++) {
-                    // tempArr.push(res.data.hits[i])
                     tempArr.push({imageURL: res.data.hits[i].webformatURL, ...deckInfo[i]})
                     tempArr2.push({imageURL: res.data.hits[i].webformatURL, ...wheelsInfo[i]})
                     tempArr3.push({imageURL: res.data.hits[i].webformatURL, ...trucksInfo[i]})
-                    // console.log(res.data.hits)
-                    // console.log(deckInfo[i])
-
                 }
                 setDeckInfo(tempArr)
                 setWheelsInfo(tempArr2)
                 setTrucksInfo(tempArr3)
-                //your tempArr now has the data from pixabay and firebase, into one array of objects
-                //watch for deckInfo change
-                // console.log(tempArr)
             })
 
     }, [])

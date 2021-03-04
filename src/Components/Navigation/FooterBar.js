@@ -3,7 +3,7 @@ import {Nav, Row, Col} from 'react-bootstrap';
 import '../../index.css';
 import {LinkContainer} from 'react-router-bootstrap';
 
-function FooterBar(props) {
+function FooterBar() {
     return (
         <>
             <Row className='header'>
