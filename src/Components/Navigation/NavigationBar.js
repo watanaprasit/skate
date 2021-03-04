@@ -34,7 +34,6 @@ function NavigationBar({cart, authenticated}) {
                     </LinkContainer>
                 </Col>
                 <Col md={'4'}>
-                    !currentuser ? output as usual below, else output that user is signed in*/}
                     {authenticated == false ?
                     <LinkContainer to='/signin'>
                         <Nav.Link className='footer-link'>SIGN IN</Nav.Link>
