@@ -17,13 +17,11 @@ export function AuthProvider({children,authenticated,setAuthenticated}) {
 
     function signIn(email, password) {
         setAuthenticated(true)
-        console.log(authenticated)
         return auth.signInWithEmailAndPassword(email, password)
     }
 
     function logout() {
         setAuthenticated(false)
-        console.log(authenticated)
         return auth.signOut()
     }
 

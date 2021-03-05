@@ -64,3 +64,6 @@ GoogleMaps - Store Locator
 
 ### **Acknowledgments**
 
+Instructors Ebere & Tristan for being extremely patient with me and for guiding me in the right direction for this project
+
+My sei27sg classmates for constantly helping me with any queries 24-7!
